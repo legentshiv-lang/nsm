@@ -1,0 +1,24 @@
+
+clc
+clear all
+close all
+
+FX=input('1st Equation:');
+FY=input('2nd Equation:');
+FZ=input('3rd Equation:');
+
+N=input('Iterations:');
+
+X=0;
+Y=0;
+Z=0;
+
+for i=1:N
+
+    X=FX(Y,Z);
+    Y=FY(X,Z);
+    Z=FZ(X,Y);
+
+    fprintf('X= %.4f, Y= %.4f, Z= %.4f\n',X,Y,Z);
+
+end

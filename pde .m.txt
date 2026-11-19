@@ -1,0 +1,42 @@
+clc
+clear all
+close all
+
+n=4;
+
+for i=1:n
+    u(1,i)=input('top values left to right:');
+end
+
+for i=1:n
+    u(n,i)=input('bottom values left to right:');
+end
+
+for i=2:n-1
+    u(i, 1)=input('left values top to bottom:');
+end
+
+u(i,n)=input('right values top to bottom:');
+
+for i=2:n-1
+
+end
+
+itn=input('no of iterations:');
+
+for k=1:itn
+
+    for i=2:n-1+
+        for j=2:n-1
+            u(i,j) = 0.25 (u(i-1,j) + u(i+1,j) + u(i,j-1) + u(i,j+1));
+        end
+    end
+    disp('Final values of u')
+end
+for i=1:n
+    fprintf('\n')
+    for j=1:n
+        fprintf('\t%.2f',u(i,j))
+    end
+end
+

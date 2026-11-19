@@ -1,0 +1,29 @@
+
+clc
+clear all
+close all
+
+A=input('Matrix A:');
+B=input('Matrix B:');
+
+N=length(B);
+
+for i=1:N
+    for j=i+1:N
+
+        fact=A(j,i)/A(i,i);
+
+        A(j,:)=A(j,:)-fact*A(i,:);
+        B(j)=B(j)-fact*B(i);
+
+    end
+end
+
+X=zeros(N,1);
+
+for i=N:-1:1
+
+    X(i)=(B(i)-A(i,i+1:N)*X(i+1:N))/A(i,i);
+
+end
+

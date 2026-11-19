@@ -1,0 +1,24 @@
+clc
+clear all
+close all
+
+F=input('Original Equation:');
+dF=input('1st Derivative Equation:');
+ddF=input('2nd Derivative Equation:');
+
+X1=input('Initial Guess X1:');
+N=input('Iteration:');
+
+while (F(X1)*ddF(X1))/(dF(X1))^2 > 1
+    X1=input('Enter Initial Guess X1 Again:');
+end
+
+for l=1:N
+
+    X2=X1-(F(X1)/dF(X1));
+
+    fprintf('Iteration %d: X2 = %.4f\n',l,X2);
+
+    X1=X2;
+
+end
