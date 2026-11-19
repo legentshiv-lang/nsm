@@ -1,0 +1,24 @@
+Optimization Problem : 
+Solve for:
+X1, X2
+maximize :
+2*X1 + X2
+subject to constraint1:
+X1 + 2*X2 <= 10
+subject to constraint2:
+X1 - X2 <= 2
+subject to constraint3: 
+X1 + X2 <= 6
+subject to constraint4:
+X1 - 2*X2 <= 1
+variable bounds:
+0 <= X1
+0 <= X2
+Solving problem using linprog.
+Optimal solution found.
+solution = struct with fields:
+X1: 4
+X2: 2
+reasonSolverStopped = 
+OptimalSolution
+objectiveValue = 12

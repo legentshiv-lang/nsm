@@ -1,0 +1,19 @@
+%Simpson's 1/3rd Method
+clc;
+close all;
+clear all;
+F=input('Define Function:');
+X0=input('X0:');
+Xn=input('Xn:');
+n=input('n:');
+H=(Xn-X0)/n;
+sum=0;
+for i=1:n-1
+    if rem(i,2) == 0
+        sum = sum + 2*F(X0+i*H);
+    else
+        sum = sum + 4*F(X0+i*H);
+    end
+    Area=(H/3)*(F(X0)+F(Xn)+sum);
+end
+fprintf('Area=%.4f\n', Area)

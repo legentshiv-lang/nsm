@@ -1,0 +1,26 @@
+%Newton's Interpolation 
+Method
+clc;
+clear all;
+close all;
+n=input('n:');
+Xg=input('Xg:');
+for i=1:n
+    X(i)=input('X(i):');
+    Y(i,1)=input('Y(i,1):');
+end
+h=X(2)-X(1);
+U=(Xg-X(1))/h;
+for j=2:n
+    for i=1:n-j+1
+        Y(i,j)=Y(i+1,j-1)-Y(i,j-
+        1);
+    end
+end
+Yg=Y(1);
+U1=1;
+for j=1:n-1
+    U1=U1*(U-j+1)/j;
+    Yg=Yg+U1*Y(1,j+1);
+end
+fprintf('Yg=%.4f\n',Yg)

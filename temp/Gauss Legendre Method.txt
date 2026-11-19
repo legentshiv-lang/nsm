@@ -1,0 +1,29 @@
+%Gauss Legendre Method
+clc;
+clear all;
+close all;
+F=input('Define Function:');
+X0=input('X0:');
+Xn=input('Xn:');
+n=input('No. of point:');
+c=(Xn-X0)/2;
+d=(Xn+X0)/2;
+for i=1:n
+    if n==2
+        X1=(c*(1/sqrt(3)))+d;
+        X2=(c*(-1/sqrt(3)))+d;
+        Y1=F(X1);
+        Y2=F(X2);
+        I=(Y1+Y2)*c;
+    else 
+        n=3;
+        X1=(c*-sqrt(3/5))+d;
+        X2=d;
+        X3=(c*sqrt(3/5))+d;
+        Y1=F(X1);
+        Y2=F(X2);
+        Y3=F(X3);
+        I=((1/9)*((5*Y1)+(8*Y2)+(5*Y3)))*c;
+    end
+end
+fprintf('I=%.4f\n', I)

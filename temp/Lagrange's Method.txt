@@ -1,0 +1,20 @@
+%Lagrange's Method
+clc;
+clear all;
+close all;
+X=input('X:');
+Y=input('Y:');
+n=input('n:');
+Xg=input('Xg:');
+Yg=0;
+for i=1:n
+    L(i)=1;
+    for j=1:n
+        if i~=j
+            L(i)=L(i)*(Xg-X(j))/(X(i)-X(j));
+        end
+    end
+    Yg=Yg+L(i)*Y(i);
+    fprintf('L(i)=%.4f\n', L(i))
+end
+fprintf('Yg=%.4f',Yg)

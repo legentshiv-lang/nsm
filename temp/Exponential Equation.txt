@@ -1,0 +1,27 @@
+%Exponential Equation
+clc;
+clear all;
+close all;
+x=input('x:');
+y=input('y:');
+n=input('n:');
+X=x;
+Y=log(y);
+sumX=0;
+sumY=0;
+sumXY=0;
+sumX2=0;
+for i=1:n
+    sumX=sumX+X(i);
+    sumY=sumY+Y(i);
+    sumXY=sumXY+X(i)*Y(i);
+    sumX2=sumX2+X(i)^2;
+end
+A=[sumX n; sumX2 sumX];
+B=[sumY; sumXY];
+C=inv(A)*(B);
+a=input('Function a:');
+b=input('Function b:');
+fprintf('C=%.4f\n',C);
+fprintf('a=%.4f\n',a);
+fprintf('b=%.4f\n',b);
